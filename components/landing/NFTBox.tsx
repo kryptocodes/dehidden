@@ -51,8 +51,10 @@ const NFTBox: React.FC<NFTBoxProps> = ({about,setAbout}) => {
                   </>
                 ) : (
                   <>
+                  <a className="flex gap-2" href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/20361720196251722520255843584474688316908758145602765193901507439086389952513">
                     <OpenSea className="h-6 w-6" />
                     <p className="mt-0">View on OpenSea</p>
+                    </a>
                   </>
                 )}
               </a>
