@@ -10,9 +10,11 @@ interface WrapperProps {
 const Wrapper: React.FC<WrapperProps> = ({children,title}) => {
         return (
             <>
+                <div className='overflow-hidden relative h-full'>
                 <NavBar/>
                 <SEO title={title} />
                 {children}
+                </div>
             </>
         );
 }

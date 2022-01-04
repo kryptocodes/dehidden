@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors:{
         gm: {
-          'pink': '#FF2D62'
+          'pink': '#FF2D62',
+          'blue': '#81A1FF'
         }
       }
      
