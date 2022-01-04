@@ -11,6 +11,7 @@ interface NFTBoxProps {
 
 const NFTBox: React.FC<NFTBoxProps> = ({about,setAbout}) => {
   const { width, height } = WindowAPI();
+  console.log(width,height)
   return (
     <>
       <div className="w-full z-50 py-8 rounded-2xl h-full relative  mx-auto sm:min-h-screen sm:pt-32 bg-white/5  backdrop-filter backdroup-blur-lg ">

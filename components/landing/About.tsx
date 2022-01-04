@@ -1,7 +1,7 @@
 import React from "react";
 import BackArrow from "../assets/BackArrow";
 
-import UseWindowSize from "../util/windowAPI";
+import WindowAPI from '../util/windowAPI'
 
 import NextImg from 'next/image'
 interface AboutProps {
@@ -10,7 +10,9 @@ interface AboutProps {
 }
 
 const About: React.FC<AboutProps> = ({ about, setAbout }) => {
-  const { width, height } = UseWindowSize();
+ 
+  
+  const { width, height } = WindowAPI();
  const Data = [
      {
          title: "Minted On",
@@ -76,7 +78,7 @@ const About: React.FC<AboutProps> = ({ about, setAbout }) => {
           ether.
         </h2>
         <p className="font-gm-regular text-lg">
-          This Shard symbolizes one of Technology's most significant moments
+          This Shard symbolizes one of Technology`s most significant moments
           embedded in the web3 layer of Ethereum. Shards of Eth are an emerging
           crypto asset, as their smart contract design prevents manipulation and
           duplication in the marketplace. Possessing a Shard grants you access
