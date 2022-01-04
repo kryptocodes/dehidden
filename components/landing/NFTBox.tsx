@@ -4,9 +4,12 @@ import OpenSea from "../assets/OpenSea";
 import { Button } from "../button";
 import WindowAPI from '../util/windowAPI'
 
-interface NFTBoxProps {}
+interface NFTBoxProps {
+  about: boolean;
+  setAbout: (about: boolean) => void;
+}
 
-const NFTBox: React.FC<NFTBoxProps> = ({}) => {
+const NFTBox: React.FC<NFTBoxProps> = ({about,setAbout}) => {
   const { width, height } = WindowAPI();
   return (
     <>
@@ -38,10 +41,10 @@ const NFTBox: React.FC<NFTBoxProps> = ({}) => {
               ring="small"
             >
               <a
-                href="https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/20361720196251722520255843584474688316908758145602765193901507439086389952513"
+                onClick={() => setAbout(true)}
                 className="flex gap-2"
               >
-                {width > 768 ? (
+                {!about ? (
                   <>
                     <InfoSVG className="h-6 w-6" />
                     <p className="mt-0">About</p>

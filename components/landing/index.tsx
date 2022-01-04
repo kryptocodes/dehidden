@@ -4,19 +4,22 @@ import NextImg from "next/image";
 
 import DATA from "./Data";
 import NFTBox from "./NFTBox";
+import About from "./About";
 
 const Landing: React.FC<any> = ({}) => {
-
+  const [about,setAbout] = React.useState(false);
   const BoxLayout = ({
     title,
     description,
     img,
+    link,
   }: {
     title: string;
     description: string;
     img: string;
+    link: string;
   }) => (
-    <div className="p-4 mb-5 transform hover:-translate-y-1 transition duration-500 ease-in-out hover:bg-gradient-to-r from-[#FF2D62]/70 to-purple-500 rounded-lg  group-hover:opacity-100 transition duration-1000 group-hover:duration-200 w-5/6 flex gap-2 flex-row w-full rounded-xl bg-[#1A1A1A]/60   backdrop-filter backdroup-blur-lg    flex-wrap ">
+    <a href={link} className="p-4 mb-5 transform hover:-translate-y-1 transition duration-500 ease-in-out hover:bg-gradient-to-r from-[#FF2D62]/70 to-purple-500 rounded-lg  group-hover:opacity-100 transition duration-1000 group-hover:duration-200 sm:w-5/6 flex gap-2 flex-row w-full rounded-xl bg-[#1A1A1A]/60   backdrop-filter backdroup-blur-lg    flex-wrap ">
       <div className="w-20 h-auto sm:mr-8  inline-flex items-center justify-center rounded-sm bg-[#282828]/40 p-4 rounded-2xl  backdrop-filter backdroup-blur-lg  flex-shrink-0">
         <NextImg src={img} width={100} height={100} />
       </div>
@@ -28,7 +31,7 @@ const Landing: React.FC<any> = ({}) => {
           {description}
         </p>
       </div>
-    </div>
+    </a>
   );
 
   const OptionBox = () => (
@@ -39,6 +42,7 @@ const Landing: React.FC<any> = ({}) => {
             title={v?.title}
             description={v?.description}
             img={v?.img}
+            link={v?.link}
             key={i}
           />
         ))}
@@ -50,10 +54,11 @@ const Landing: React.FC<any> = ({}) => {
     <>
       <div className="w-full flex flex-col  relative sm:h-screen h-full    sm:flex-row ">
         <div className="sm:w-2/6 md:-mt-24 sm:p-0 p-4  relative z-50">
-          <NFTBox/>
+          <NFTBox about={about} setAbout={setAbout} />
         </div>
-        <div className="sm:w-4/6 pt-4 p-8 ">
-          <OptionBox />
+        <div className="sm:w-4/6 pt-4 sm:p-8 p-4 ">
+          {!about ? 
+          <OptionBox /> : <About about={about} setAbout={setAbout} /> }
         </div>
       </div>
     </>
