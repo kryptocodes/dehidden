@@ -7,9 +7,6 @@ import NFTBox from "./NFTBox";
 
 const Landing: React.FC<any> = ({}) => {
 
-
-  
-
   const BoxLayout = ({
     title,
     description,
@@ -55,7 +52,7 @@ const Landing: React.FC<any> = ({}) => {
         <div className="sm:w-2/6 md:-mt-24 sm:p-0 p-4  relative z-50">
           <NFTBox/>
         </div>
-        <div className="sm:w-4/6 pt-4 ">
+        <div className="sm:w-4/6 pt-4 p-8 ">
           <OptionBox />
         </div>
       </div>
