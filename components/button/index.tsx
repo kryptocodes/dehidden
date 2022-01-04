@@ -31,7 +31,7 @@ const ringSize = {
 
 export const Button: React.FC<buttonProps> = ({children, color="primary", size ="big", ring="medium", className="", ...props}) => {
         return (
-            <button className={`${sizeClassnames[size]} ${colorClassnames[color]} active:${ringSize[ring]} active:ring-kat-primary active:bg-transparent  font-bold items-center text-white  justify-center ${className}`}
+            <button className={`${sizeClassnames[size]} ${colorClassnames[color]} active:${ringSize[ring]} font-gm-regular active:bg-transparent  font-bold items-center text-white hover:-translate-y-1 transition duration-500 ease-in-out justify-center ${className}`}
                 type="button"
             {...props}
             >

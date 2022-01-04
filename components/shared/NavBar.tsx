@@ -15,19 +15,25 @@ const NavBar: React.FC<NavBarProps> = ({}) => {
     <>
       <Toaster position="bottom-center" reverseOrder={false} />
       <div className="flex p-4 z-50">
-        <a href="https://dehidden.com/" className="flex z-70 sm:ml-4 gap-2" style={{zIndex:9999}}>
+        <a
+          href="https://dehidden.com/"
+          className="flex z-70 sm:ml-4 gap-2"
+          style={{ zIndex: 9999 }}
+        >
           <Logo className="h-8 w-8 mt-2" />
-          <h1 className="font-bold text-2xl z-50 mt-2 ">Dehidden</h1>
+          <h1 className="font-bold text-2xl font-gm-regular z-50 mt-3 ">
+            Dehidden
+          </h1>
         </a>
         <div className="flex ml-auto  sm:mr-32">
           <div className="flex  shadow w-full  mx-auto items-center sm:bg-gray-900/50 z-10   rounded-full overflow-hidden rounded-full justify-between">
             <input
-              className="text-base hidden sm:block text-white flex-grow bg-transparent  outline-none p-2 mx-2"
+              className="text-base font-gm-regular hidden sm:block text-white flex-grow bg-transparent  outline-none p-2 mx-2"
               type="text"
               value={data?.url}
               readOnly={true}
             />
-            <div className="ms:flex items-center px-2   mx-auto ">
+            <div className="ms:flex items-center px-2 s  mx-auto ">
               <CopyToClipboard
                 text={data?.url}
                 onCopy={() => {
